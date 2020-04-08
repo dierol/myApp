@@ -15,7 +15,18 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-menu-button>Open Menu</ion-menu-button>
+
+    <ion-button type="button"
+      [hidden]="identityIsSet"
+      (click)="presentModal()"
+      >Login
+    </ion-button>
+
+    <ion-button type="button"
+      [hidden]="!identityIsSet"
+      (click)="removeIdentity()"
+      >Logout
+    </ion-button>
   </div>
 </ion-content>
